@@ -1,0 +1,33 @@
+import {render, screen } from '@testing-library/react'
+import Home from '@/app/page'
+import '@testing-library/jest-dom'
+
+
+import Sidebar from '@/app/components/Sidebar'
+
+it('test1', async () => {
+  
+  render(<Home/>)
+  const text = await screen.getByText("logo")
+  expect( text ).toBeInTheDocument()
+  
+})
+
+
+
+
+
+/*
+it('App Router: Works with Server Components', async () => {
+    render(
+    
+      <Home/>
+      
+    
+    )
+
+    const text = await screen.getByText("Docs")
+    expect( text ).toBeInTheDocument()
+    
+  })
+  */

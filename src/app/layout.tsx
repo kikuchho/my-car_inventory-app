@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { ApolloWrapper } from './lib/apollo-wrapper'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+       <body className={`${inter.className}  bg-orange-600` }>
+         
+        <ApolloWrapper>{children}</ApolloWrapper>
+         
+       </body>
     </html>
   )
 }
